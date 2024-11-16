@@ -32,8 +32,6 @@ const ModulePathGraphSVG = ({ userId, modulePath }) => {
     return <p>Cannot find level from events</p>;
   }
 
-  const radius = 100;
-
   return (
     <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 mx-auto mb-6 max-w-full">
       <h2 className="text-lg font-semibold">Level</h2>
