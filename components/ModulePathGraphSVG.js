@@ -35,16 +35,19 @@ const ModulePathGraphSVG = ({ userId, modulePath }) => {
   const radius = 100;
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mx-auto mb-6 max-w-sm p-8 pr-10">
+    <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 mx-auto mb-6 max-w-full">
       <h2 className="text-lg font-semibold">Level</h2>
-      <svg width="300" height="230" className="mt-6 mx-auto">
-        {/* Define the radial gradient for the circle fill */}
+      <svg
+        width="100%"
+        height="auto"
+        viewBox="0 0 300 230"
+        className="mt-4 mx-auto"
+      >
         <defs>
           <radialGradient id="circleGradient" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(75, 192, 192, 1)" />
             <stop offset="100%" stopColor="rgba(75, 192, 192, 0.6)" />
           </radialGradient>
-          {/* Shadow filter */}
           <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
             <feDropShadow
               dx="0"
@@ -55,13 +58,11 @@ const ModulePathGraphSVG = ({ userId, modulePath }) => {
             />
           </filter>
         </defs>
-
-        {/* Circle with gradient and shadow */}
         <g transform="translate(150, 100)">
           <circle
             cx="0"
             cy="0"
-            r={radius}
+            r="100"
             fill="url(#circleGradient)"
             filter="url(#shadow)"
           />

@@ -26,7 +26,6 @@ export function Profile() {
         }
 
         setData(result.user[0]);
-        // console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -54,7 +53,7 @@ export function Profile() {
   const modulePath = "/bahrain/bh-module";
 
   return (
-    <div className="mx-auto mt-5 ml-5 p-4 rounded-lg">
+    <div className="mx-auto mt-5 ml-5 p-4 rounded-lg relative">
       {/* Logout Button */}
       <button
         onClick={handleLogout}
@@ -64,9 +63,13 @@ export function Profile() {
         <img src="./logout.svg" alt="Logout" className="h-6 w-6" />
       </button>
 
-      <h1 className="text-3xl font-bold text-left mb-1">
-        Hello, {fullName} ✨
-      </h1>
+      {/* Heading and Greeting */}
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+        <h1 className="text-3xl font-bold text-left sm:ml-0 mb-4 sm:mb-0 sm:mt-0 mt-10">
+          Hello, {fullName} ✨
+        </h1>
+      </div>
+
       <p className="text-left text-gray-600 mb-6">AKA {data?.login}</p>
 
       <div className="mb-10 p-4 rounded-lg flex flex-wrap gap-6">

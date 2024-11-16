@@ -38,80 +38,82 @@ const UserAuditGraph = () => {
   const svgWidth = 330;
 
   return (
-    <div className="bg-white shadow-md rounded-lg mx-auto mb-6 max-w-sm p-9 pb-2">
-      <h2 className="text-lg font-semibold mb-2">User Audit Graph</h2>
-      <p className="text-sm text-gray-700 mb-8">
+    <div className="bg-white shadow-md rounded-lg mx-auto mb-6 max-w-sm p-2">
+      <h2 className="text-lg font-semibold m-2">User Audit Graph</h2>
+      <p className="text-sm text-gray-700 m-2">
         Audit Ratio:{" "}
         <strong>
           {typeof auditRatio === "number" ? auditRatio.toFixed(1) : "N/A"}
         </strong>
       </p>
-      <svg width="100%" height={svgHeight}>
-        {/* X-Axis */}
-        <line
-          x1="40"
-          y1={svgHeight - 20}
-          x2={svgWidth - 30}
-          y2={svgHeight - 20}
-          stroke="black"
-        />
+      <div className="flex justify-center">
+        <svg width={svgWidth} height={svgHeight}>
+          {/* X-Axis */}
+          <line
+            x1="40"
+            y1={svgHeight - 20}
+            x2={svgWidth - 30}
+            y2={svgHeight - 20}
+            stroke="black"
+          />
 
-        {/* Y-Axis */}
-        <line x1="40" y1="0" x2="40" y2={svgHeight - 20} stroke="black" />
+          {/* Y-Axis */}
+          <line x1="40" y1="0" x2="40" y2={svgHeight - 20} stroke="black" />
 
-        {/* X-Axis Arrow */}
-        <polygon
-          points={`${svgWidth - 30},${svgHeight - 20} ${svgWidth - 40},${
-            svgHeight - 10
-          } ${svgWidth - 40},${svgHeight - 30}`}
-          fill="black"
-        />
+          {/* X-Axis Arrow */}
+          <polygon
+            points={`${svgWidth - 30},${svgHeight - 20} ${svgWidth - 40},${
+              svgHeight - 10
+            } ${svgWidth - 40},${svgHeight - 30}`}
+            fill="black"
+          />
 
-        {/* Y-Axis Arrow */}
-        <polygon points={`40,0 30,10 50,10`} fill="black" />
+          {/* Y-Axis Arrow */}
+          <polygon points={`40,0 30,10 50,10`} fill="black" />
 
-        {/* Bars */}
-        <rect
-          x="60"
-          y={svgHeight - totalUpMB * heightScale - 20}
-          width={barWidth}
-          height={totalUpMB * heightScale}
-          fill="rgba(75, 192, 192, 0.6)"
-        />
-        <rect
-          x="180"
-          y={svgHeight - totalDownMB * heightScale - 20}
-          width={barWidth}
-          height={totalDownMB * heightScale}
-          fill="rgba(255, 206, 86, 0.6)"
-        />
+          {/* Bars */}
+          <rect
+            x="60"
+            y={svgHeight - totalUpMB * heightScale - 20}
+            width={barWidth}
+            height={totalUpMB * heightScale}
+            fill="rgba(75, 192, 192, 0.6)"
+          />
+          <rect
+            x="180"
+            y={svgHeight - totalDownMB * heightScale - 20}
+            width={barWidth}
+            height={totalDownMB * heightScale}
+            fill="rgba(255, 206, 86, 0.6)"
+          />
 
-        {/* Labels */}
-        <text x="110" y={svgHeight - 5} textAnchor="middle" fill="black">
-          Total Up
-        </text>
-        <text x="230" y={svgHeight - 5} textAnchor="middle" fill="black">
-          Total Down
-        </text>
+          {/* Labels */}
+          <text x="110" y={svgHeight - 5} textAnchor="middle" fill="black">
+            Total Up
+          </text>
+          <text x="230" y={svgHeight - 5} textAnchor="middle" fill="black">
+            Total Down
+          </text>
 
-        {/* Values */}
-        <text
-          x="110"
-          y={svgHeight - totalUpMB * heightScale - 25}
-          textAnchor="middle"
-          fill="black"
-        >
-          {totalUpMB.toFixed(2)} MB
-        </text>
-        <text
-          x="230"
-          y={svgHeight - totalDownMB * heightScale - 25}
-          textAnchor="middle"
-          fill="black"
-        >
-          {totalDownMB.toFixed(2)} MB
-        </text>
-      </svg>
+          {/* Values */}
+          <text
+            x="110"
+            y={svgHeight - totalUpMB * heightScale - 25}
+            textAnchor="middle"
+            fill="black"
+          >
+            {totalUpMB.toFixed(2)} MB
+          </text>
+          <text
+            x="230"
+            y={svgHeight - totalDownMB * heightScale - 25}
+            textAnchor="middle"
+            fill="black"
+          >
+            {totalDownMB.toFixed(2)} MB
+          </text>
+        </svg>
+      </div>
     </div>
   );
 };
