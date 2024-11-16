@@ -21,14 +21,11 @@ const UserInfo = ({ user }) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-6 pr-32 mx-auto mb-6 max-w-sm relative">
       <h2 className="text-lg font-semibold">Student Information</h2>
-      {/* <p className="mt-5">ID: {user.id}</p> */}
       <p className="mb-2 mt-4">Username: {user.login}</p>
       <p className="mb-2">
         Name: {user.firstName} {user.lastName}
       </p>
       <p className="mb-2">Email: {user.email}</p>
-      {/* <p className="mb-2">Campus: {user.campus}</p> */}
-      {/* <p className="mb-2">Gender: {user.gender}</p> */}
 
       {/* Conditional rendering for gender-specific images */}
       {gender === "female" && (
@@ -47,8 +44,6 @@ const UserInfo = ({ user }) => {
       )}
 
       <p className="mb-2">Date Of Birth: {formattedDOB}</p>
-      {/* <p>job: {user.job}</p>
-       <p>employment: {user.employment}</p> */}
 
       {isBirthday && (
         <p className="mt-4 text-green-500 font-semibold">
@@ -59,14 +54,14 @@ const UserInfo = ({ user }) => {
 
       {user.job === "UOB" && (
         <p className="mt-4 text-yellow-500 font-semibold">
-          UOB Student! <br></br>
+          UOB Student! <br />
           YOU ARE A HERO 👑
         </p>
       )}
 
       {user.employment === "Student" && user.job !== "UOB" && (
         <p className="mt-4 text-blue-500 font-semibold">
-          Keep rocking it, Uni student! 📚 You're doing awesome!
+          Keep rocking it, Uni student! 📚 You&apos;re doing awesome!
         </p>
       )}
     </div>

@@ -68,13 +68,6 @@ const SkillsSVG = ({ userId }) => {
             const x2 = outerRadius * Math.cos(degreesToRadians(endAngle));
             const y2 = outerRadius * Math.sin(degreesToRadians(endAngle));
 
-            // Calculate position for the label
-            const labelAngle = startAngle + angle / 2;
-            const labelX =
-              (outerRadius + 20) * Math.cos(degreesToRadians(labelAngle));
-            const labelY =
-              (outerRadius + 20) * Math.sin(degreesToRadians(labelAngle));
-
             startAngle += angle;
 
             return (

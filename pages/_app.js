@@ -1,7 +1,6 @@
 import { ApolloProvider } from '@apollo/client';
 import client from '../lib/apolloClient';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import '../styles/globals.css';
 
 export function MyApp({ Component, pageProps }) {
