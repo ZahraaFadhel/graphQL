@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "./../components/loginForm.js";
 
 export function Login() {
   const [error, setError] = useState(null);
