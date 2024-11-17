@@ -31,7 +31,7 @@ const XPGraphSVG = ({ userId }) => {
 
   const width = 700;
   const height = 400;
-  const margin = { top: 20, right: 30, bottom: 80, left: 60 };
+  const margin = { top: 20, right: 30, bottom: 20, left: 60 };
 
   // Filter data for the last 6 months
   const sixMonthsAgo = new Date();
@@ -95,7 +95,7 @@ const XPGraphSVG = ({ userId }) => {
           ))}
 
           {/* Date labels */}
-          {cumulativeData.map((d, index) => (
+          {/* {cumulativeData.map((d, index) => (
             index % Math.ceil(cumulativeData.length / 10) === 0 && (
               <text
                 key={index}
@@ -111,7 +111,7 @@ const XPGraphSVG = ({ userId }) => {
                 })}
               </text>
             )
-          ))}
+          ))} */}
 
           {/* Y-axis labels */}
           {Array.from({ length: 5 }).map((_, index) => (
