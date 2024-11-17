@@ -19,3 +19,37 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure dark text color for input fields */
+input,
+textarea {
+  color: #171717; /* Dark text color */
+  background-color: var(--background);
+}
+
+/* Mobile adjustments for input fields */
+@media (max-width: 640px) {
+  input,
+  textarea {
+    color: #171717; /* Ensure dark color on mobile devices */
+    font-size: 16px; /* Larger font size for better readability */
+  }
+}
+
+/* For autofill text color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #171717; /* Dark text color */
+  -webkit-box-shadow: 0 0 0px 1000px var(--background) inset; /* Match background */
+  box-shadow: 0 0 0px 1000px var(--background) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Focus styles for better visibility */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(75, 192, 192, 1);
+  box-shadow: 0 0 0 2px rgba(75, 192, 192, 0.4);
+}

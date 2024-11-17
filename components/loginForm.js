@@ -28,7 +28,7 @@ const LoginForm = ({ onLogin, error }) => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgba(75,_192,_192,_1)]"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgba(75,_192,_192,_1)] text-gray-800"
           />
         </div>
 

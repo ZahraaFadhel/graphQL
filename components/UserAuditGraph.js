@@ -29,8 +29,8 @@ const UserAuditGraph = () => {
   if (error) return <p className="text-red-600">{error}</p>;
 
   const { totalUp = 0, totalDown = 0, auditRatio = "N/A" } = data || {};
-  const totalUpMB = totalUp / 1048576;
-  const totalDownMB = totalDown / 1048576;
+  const totalUpMB = totalUp / 1000000;
+  const totalDownMB = totalDown / 1000000;
   const maxValue = Math.max(totalUpMB, totalDownMB);
   const barWidth = 100;
   const heightScale = maxValue ? 150 / maxValue : 0;
